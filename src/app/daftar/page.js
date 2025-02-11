@@ -3,8 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { MainLayout } from "../components/layout/MainLayout";
 import { useState } from "react";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
+import googleAuthHandler from "../function/googleAuthHandler";
 
 const RegisterPage = () => {
+    const [usernameInputValue, setUsernameInputValue] = useState("");
     const [emailInputValue, setEmailInputValue] = useState("");
     const [passwordInputValue, setPasswordInputValue] = useState("");
     const [verifyPasswordInputValue, setVerifyPasswordInputValue] = useState("");
@@ -26,14 +28,12 @@ const RegisterPage = () => {
                         </div>
 
                         <div className="w-full h-[50px] flex items-center rounded border text-[10px] 2xl:text-xs mt-[19px] overflow-hidden">
-                            <a href="{{ route('auth.google') }}" className="w-full h-full">
-                                <button type="button" className="w-full h-full flex items-center justify-center space-x-3 hover:bg-neutral-100 duration-150">
-                                    <img src="/assets/icon/google.svg" className="w-5"/>
-                                    <span>
-                                        Daftar dengan Google
-                                    </span>
-                                </button>
-                            </a>
+                            <button type="button" className="w-full h-full flex items-center justify-center space-x-3 hover:bg-neutral-100 duration-150" onClick={googleAuthHandler}>
+                                <img src="/assets/icon/google.svg" className="w-5"/>
+                                <span>
+                                    Daftar dengan Google
+                                </span>
+                            </button>
                         </div>
 
                         <div className="w-full mt-[8px] mb-[7px] h-[38px] flex items-center">
@@ -47,7 +47,26 @@ const RegisterPage = () => {
                         </div>
 
                         <div className="mt-[10px]">
-                            <label htmlFor="mobile-number-input"
+                            <label htmlFor="username-input"
+                                className="text-[11px]">
+                                Nama Pengguna*
+                            </label>
+                            <div
+                                className="h-[50px] rounded-[5px] border border-[#D0D0D0] px-3 flex flex-col pt-[4px] pb-[11px]">
+                                <div className="w-full h-full flex items-center relative">
+                                    <input id="username-input" name="username" type="text"
+                                        className="text-xs text-[#3C3C3C] w-full h-full p-0 border-none focus:ring-0 active:ring-0 focus:border-none active:border-none focus:outline-none active:outline-none"
+                                        placeholder="masukan email" value={usernameInputValue} onChange={(e) => setUsernameInputValue(e.target.value)}/>
+
+                                    <button type="button" className="hidden" id="show-email-icon">
+                                        <img src="/assets/img/icon/show-email-icon.svg"
+                                            className="absolute top-0 bottom-0 my-auto right-[13px] w-5" />
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="mt-[10px]">
+                            <label htmlFor="email-input"
                                 className="text-[11px]">
                                 Email*
                             </label>
@@ -66,7 +85,7 @@ const RegisterPage = () => {
                             </div>
                         </div>
                         <div className="mt-[10px]">
-                            <label htmlFor="mobile-number-input"
+                            <label htmlFor="password-input"
                                 className="text-[11px] {{ $errors->has('phone_number') | $errors->has('password') ? 'text-red-500' : 'text-verydarkgray' }}">
                                 Password*
                             </label>
@@ -88,7 +107,7 @@ const RegisterPage = () => {
                             </div>
                         </div>
                         <div className="mt-[10px]">
-                            <label htmlFor="mobile-number-input"
+                            <label htmlFor="confirm-password-input"
                                 className="text-[11px] {{ $errors->has('phone_number') | $errors->has('password') ? 'text-red-500' : 'text-verydarkgray' }}">
                                 Konfirmasi Password*
                             </label>
@@ -98,7 +117,7 @@ const RegisterPage = () => {
                                     Konfirmasi Password
                                 </span>
                                 <div className="w-full h-[18px] relative">
-                                    <input id="password-input" name="password" type="password"
+                                    <input id="confirm-password-input" name="confirm-password" type="password"
                                         className="text-[10px] text-[#3C3C3C] w-full h-full p-0 border-none focus:ring-0 active:ring-0 focus:border-none active:border-none focus:outline-none active:outline-none"
                                         placeholder="....." value={verifyPasswordInputValue} onChange={(e) => setVerifyPasswordInputValue(e.target.value)}/>
 
