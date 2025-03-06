@@ -16,7 +16,7 @@ const CurrencyPriceTableSection = () => {
             <div className="border-l-4 border-main-theme-2 pl-2">
               Kurs Mata Uang
             </div>
-            <div className="grid grid-cols-2 gap-x-14 mt-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-14 mt-3">
               {/* table 1 */}
               <table className="w-full text-left">
                 <thead>

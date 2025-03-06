@@ -6,9 +6,9 @@ export const MainLayout = ({children}) => {
     return (
         <>
             <Navbar/>
-            <div className="w-full h-full px-96">
-                {children}
-            </div>
+                <div className="w-full h-full px-7 md:px-16 lg:px-28 2xl:px-96">
+                    {children}
+                </div>
             <Footer/>
         </>
     )

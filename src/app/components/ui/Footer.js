@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Footer = () => {
     return (
-        <footer className="w-full h-fit py-20 px-96 mt-10">
+        <footer className="w-full h-fit py-20 px-7 md:px-16 lg:px-16 2xl:px-96 mt-10">
             <div className="border-t border-neutral-300 pt-5 pb-20">
                 <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-y-10 l:gap-y-0 mt-[46.96px]">    
                     <div className="space-y-[36px]">
@@ -43,7 +43,7 @@ const Footer = () => {
                         </ul>
                     </div>
         
-                    <div className="col-span-2 flex justify-end">
+                    <div className="col-span-2 flex xl:justify-end">
                         <div className="space-y-[40px]">
                             <div className="w-full ml-auto space-y-7">
                                 <h3 className="font-medium mb-2 text-oxfordblue text-sm">Hubungi Kami</h3>

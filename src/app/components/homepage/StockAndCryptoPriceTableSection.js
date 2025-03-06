@@ -8,14 +8,14 @@ const StockAndCryptoPriceTableSection = () => {
     ];
 
     const cryptoData = [
-      { symbol: "BTC", name: "Bitcoin", last: 468_500_000.00, change: 3_500_000.00, percent: 0.75, type: "crypto" },
-      { symbol: "ETH", name: "Ethereum", last: 31_500_000.00, change: 850_000.00, percent: 2.77, type: "crypto" },
+      { symbol: "BTC", name: "Bitcoin", last: 468_500_000.00, change: 300.00, percent: 0.75, type: "crypto" },
+      { symbol: "ETH", name: "Ethereum", last: 31_500_000.00, change: 850.00, percent: 2.77, type: "crypto" },
       { symbol: "XRP", name: "Ripple", last: 8_400.00, change: 250.00, percent: 3.06, type: "crypto" },
     ];
 
     return (
       <div className="w-full mt-6 p-8 bg-neutral-100">
-          <div className="grid grid-cols-2 gap-x-14">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-14">
             <div>
               <div className="border-l-4 border-main-theme-1 pl-2">
                 Saham
