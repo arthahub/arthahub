@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
 import AdvanceChart from "../components/tradingview/chart/AdvanceChart";
 import MostActiveStocks from "../components/MostActiveSymbol";
 import Search from "../components/search";
